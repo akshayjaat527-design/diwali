@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Diwali, Choti Don! ✨</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #1f1c2c, #928dab);
+            font-family: 'Arial', sans-serif;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            max-width: 400px;
+            width: 85%;
+        }
+        h1 {
+            color: #ff9933;
+            text-shadow: 0 0 10px rgba(255, 153, 51, 0.8);
+            margin-bottom: 10px;
+            font-size: 26px;
+        }
+        h2 {
+            font-size: 22px;
+            margin-bottom: 40px;
+            color: #fff;
+            line-height: 1.4;
+        }
+        .name-tag {
+            color: #ff4757;
+            font-weight: bold;
+            text-shadow: 0 0 5px rgba(255, 71, 87, 0.5);
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60px;
+            width: 100%;
+        }
+        button {
+            padding: 12px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            touch-action: manipulation;
+        }
+        #yesBtn {
+            background-color: #4CAF50;
+            color: white;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+            z-index: 10;
+        }
+        #noBtn {
+            background-color: #f44336;
+            color: white;
+            position: fixed;
+            top: 55%; 
+            left: 55%;
+            transition: all 0.15s ease-out;
+            z-index: 20;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="mainContainer">
+        <h1>🪔 Happy Diwali! ✨</h1>
+        <h2>Hey <span class="name-tag">Choti Don</span>,<br>Will you be my GF? ❤️</h2>
+        <div class="buttons">
+            <button id="yesBtn" onclick="celebrate()">Yes</button>
+            <button id="noBtn" onmouseover="moveNoButton()" onclick="moveNoButton()" ontouchstart="moveNoButton(event)">No</button>
+        </div>
+    </div>
+
+    <script>
+        function moveNoButton(event) {
+            if(event) event.preventDefault();
+            const noBtn = document.getElementById('noBtn');
+            const buttonWidth = noBtn.offsetWidth;
+            const buttonHeight = noBtn.offsetHeight;
+            const padding = 30;
+            const maxX = window.innerWidth - buttonWidth - padding;
+            const maxY = window.innerHeight - buttonHeight - padding;
+            
+            let randomX = Math.floor(Math.random() * (maxX - padding)) + padding;
+            let randomY = Math.floor(Math.random() * (maxY - padding)) + padding;
+            
+            noBtn.style.left = randomX + 'px';
+            noBtn.style.top = randomY + 'px';
+        }
+
+        function celebrate() {
+            const container = document.getElementById('mainContainer');
+            container.innerHTML = `
+                <h1 style="color: #2ecc71; font-size: 32px;">YAYYY! 🎉❤️</h1>
+                <p style="font-size: 20px; margin-top: 20px;">I knew it, <span class="name-tag" style="font-size: 22px;">Choti Don</span>! 🥰<br>Happy Diwali My Love! 🪔✨</p>
+                <div style="font-size: 50px; margin-top: 20px;">🎆💥✨</div>
+            `;
+            const noBtn = document.getElementById('noBtn');
+            if(noBtn) noBtn.remove();
+        }
+    </script>
+
+</body>
+</html>
