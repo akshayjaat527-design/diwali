@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Diwali, Choti Don! ✨</title>
+    <title>Happy Diwali, Reena! ✨</title>
     <style>
         body {
             margin: 0;
@@ -25,7 +25,7 @@
             box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.18);
-            max-width: 400px;
+            max-width: 450px;
             width: 85%;
         }
         h1 {
@@ -35,15 +35,20 @@
             font-size: 26px;
         }
         h2 {
-            font-size: 22px;
-            margin-bottom: 40px;
+            font-size: 20px;
+            margin-bottom: 30px;
             color: #fff;
-            line-height: 1.4;
+            line-height: 1.5;
+            font-weight: normal;
         }
         .name-tag {
             color: #ff4757;
             font-weight: bold;
             text-shadow: 0 0 5px rgba(255, 71, 87, 0.5);
+        }
+        .highlight {
+            color: #fffa65;
+            font-weight: bold;
         }
         .buttons {
             display: flex;
@@ -71,7 +76,7 @@
             background-color: #f44336;
             color: white;
             position: fixed;
-            top: 55%; 
+            top: 60%; 
             left: 55%;
             transition: all 0.15s ease-out;
             z-index: 20;
@@ -82,7 +87,7 @@
 
     <div class="container" id="mainContainer">
         <h1>🪔 Happy Diwali! ✨</h1>
-        <h2>Hey <span class="name-tag">Choti Don</span>,<br>Will you be my GF? ❤️</h2>
+        <h2>Hey <span class="name-tag">Reena</span> (Meri <span class="name-tag">Choti Don</span>),<br>Sab kuch bhoola ke ek <span class="highlight">nayi shuruaat</span> karein?<br><br><b>Will you be my GF again? ❤️</b></h2>
         <div class="buttons">
             <button id="yesBtn" onclick="celebrate()">Yes</button>
             <button id="noBtn" onmouseover="moveNoButton()" onclick="moveNoButton()" ontouchstart="moveNoButton(event)">No</button>
@@ -109,8 +114,8 @@
         function celebrate() {
             const container = document.getElementById('mainContainer');
             container.innerHTML = `
-                <h1 style="color: #2ecc71; font-size: 32px;">YAYYY! 🎉❤️</h1>
-                <p style="font-size: 20px; margin-top: 20px;">I knew it, <span class="name-tag" style="font-size: 22px;">Choti Don</span>! 🥰<br>Happy Diwali My Love! 🪔✨</p>
+                <h1 style="color: #2ecc71; font-size: 32px;">THANK YOU! 🎉❤️</h1>
+                <p style="font-size: 18px; margin-top: 20px; line-height: 1.5;">I promise ab sab bohot pyara hoga, <span class="name-tag">Reena</span>! 🥰<br><br>Happy Diwali My Love! 🪔✨</p>
                 <div style="font-size: 50px; margin-top: 20px;">🎆💥✨</div>
             `;
             const noBtn = document.getElementById('noBtn');
